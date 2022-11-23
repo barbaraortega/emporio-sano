@@ -1,7 +1,11 @@
 import logo from './logo.svg';
 import NavBar from './componentes/NavBar';
 import ItemListContainer from './componentes/ItemListContainer';
+import ItemDetailContainer from './componentes/ItemDetailContainer';
+import { Layout } from './componentes/Layout';
 import "./titulo.css"
+
+
 
 function App() {
   return (
@@ -22,10 +26,10 @@ function App() {
         </a>
       </header> */}
 
-    <main> 
-    <NavBar/>
-    <ItemListContainer greeting={"Bienvenidos"}/>
-    </main>
+   
+    <Layout> 
+    <ItemListContainer/>
+    </Layout>
     </div>
      
 
