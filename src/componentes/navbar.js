@@ -1,14 +1,12 @@
-import Button from 'react-bootstrap/Button';
-import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-/* cambio href por link y to */
-import { Link} from "react-router-dom";
+import Container from "react-bootstrap/Container";
+import Form from "react-bootstrap/Form";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
 
-import CartWidget from './CartWidget';
-import { router } from '../router';
+/* cambio href por link y to */
+import { Link } from "react-router-dom";
+
+import CartWidget from "./CartWidget";
 
 function NavScrollExample() {
   return (
@@ -19,46 +17,28 @@ function NavScrollExample() {
         <Navbar.Collapse id="navbarScroll">
           <Nav
             className="me-auto my-2 my-lg-0"
-            style={{ maxHeight: '100px' }}
+            style={{ maxHeight: "100px" }}
             navbarScroll
           >
-            <Nav.Link><Link to='/'>Home</Link></Nav.Link>
-            <Nav.Link><Link to='/category/guatero'>Guateros</Link></Nav.Link>
-            <Nav.Link><Link to='/category/alimento'>Alimentos</Link></Nav.Link>
-            <Nav.Link><Link to='/item/:id'>Item</Link></Nav.Link>
-            
-         {/*  <NavDropdown title="Link" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#action3">Como Comprar</NavDropdown.Item>
-              <NavDropdown.Item href="#action4"> 
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Divider /> 
-              <NavDropdown.Item href="#action5">
-                Something else here
-              </NavDropdown.Item>
-            </NavDropdown> */}
-            {/* <Nav.Link href="#" disabled>
-              Link
-            </Nav.Link> */}
+            <Link className="nav-link" to="/">
+              Home
+            </Link>
+
+            <Link className="nav-link" to="/category/guatero">
+              Guateros
+            </Link>
+
+            <Link className="nav-link" to="/category/alimento">
+              Alimentos
+            </Link>
           </Nav>
           <Form className="d-flex">
-            {/* <Form.Control
-              type="search"
-              placeholder="Search"
-              className="me-2"
-              aria-label="Search"
-            />
-            <Button variant="outline-success">Search</Button> */}
-            <CartWidget var/>
+            <CartWidget var />
           </Form>
         </Navbar.Collapse>
       </Container>
     </Navbar>
-
-
-);
-
+  );
 }
-
 
 export default NavScrollExample;

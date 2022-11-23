@@ -1,48 +1,40 @@
 import { useEffect, useState } from "react";
-import ItemDetail from "./ItemDetail";
-import{useParams} from "react-router-dom";
+import { useParams } from "react-router-dom";
 import ItemList from "./ItemList";
 
 /* mock de productos */
-import {item }  from "../mocks/items.mock";
+import { item as items } from "../mocks/items.mock";
 
-/* import "../productos.css" */
+const ItemListContainer = () => {
+  const { category } = useParams();
+  const [products, setProducts] = useState([]);
 
+  useEffect(() => {
+    new Promise((resolve) =>
+      setTimeout(() => {
+        resolve(items);
+      }, 1000)
+    ).then((data) => {
+      if (category) {
+        const categories = data.filter(
+          (products) => products.category === category
+        );
+        setProducts(categories);
+      } else {
+        setProducts(data);
+      }
+    });
+  }, [category]);
 
-  
+  if (products.length === 0) {
+    return <p> Cargando...</p>;
+  }
 
-const ItemListContainer =() =>{
-    const {Category } =useParams ();
-    const [products, setproducts] =useState([]);
-
-
-    useEffect (() =>{
-        new Promise((resolve) => 
-        setTimeout (() => {
-            resolve (item);
-        }, 2000)
-        ) .then ((data) => {
-        if (Category) {
-            const categories= data.filter(
-                (products) => products.Category ===Category
-            );
-        setproducts (categories);
-        } else {
-            setproducts(data);
-        }
-    } );
-    },[Category]);
-
-    if (products.length === 0) {
-        return <p> Cargando...</p>
-    }
-
-return (
-    <div /* className="productos" */>
-    <ItemList products = {products} />
-
+  return (
+    <div>
+      <ItemList products={products} />
     </div>
-);
+  );
 };
 
-export default ItemListContainer
+export default ItemListContainer;
