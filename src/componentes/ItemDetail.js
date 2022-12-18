@@ -1,3 +1,5 @@
+
+
 const ItemDetail = ({ item }) => {
   return (
     <div className="card" >
