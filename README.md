@@ -88,10 +88,10 @@ Sirve para e-commerce en donde se presentan productos desde base de datos en fir
 
 ### Tecnologías utilizadas
 
-React js
-JavaScript
-Boostrap react
-Firebase
+- React js
+- JavaScript
+- Boostrap
+- Firebase
 
 ### Desarrollador
 
