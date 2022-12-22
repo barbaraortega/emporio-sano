@@ -2,7 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import CartView from "../views/Cart";
 import CategoryView from "../views/Category";
-import ItemView from "../views/Item";
+import ItemView from "../views/item";
 import CheckoutView from "../views/Checkout";
 
 export const router = createBrowserRouter([
