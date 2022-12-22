@@ -70,29 +70,29 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
  -->
 
- <em> # Repo Emporio sano y feliz </em>
+## Repo Emporio sano y feliz
 
-<em> # Descripción </em>
+### Descripción
 
 Este proyecto es una app de ventas de productos saludables desarrollado con React js, como proyecto final del curso de React dictado por CoderHouse.
 
-<em> # Instalación </em>
+### Instalación
 
 Para hacer funcional esta app debe instalar las dependencias del proyecto.
 Npm install
 Npm start para iniciar la app
 
-<em> # Uso </em>
+### Uso
 
 Sirve para e-commerce en donde se presentan productos desde base de datos en firebase, que el cliente pueda comprar, los cuales se van agregando al carrito, para luego hacer el check-out en donde se piden algunos datos para completar la compra.
 
-<em> # Tecnologías utilizadas </em>
+### Tecnologías utilizadas
 
 React js
 JavaScript
 Boostrap react
 Firebase
 
-<em> # Desarrollador</em>
+### Desarrollador
 
 Bárbara Ortega
