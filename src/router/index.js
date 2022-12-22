@@ -1,9 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
-
-import Category from "../views/Category";
-import ItemView from "../views/Item"
-
+import CartView from "../views/Cart";
+import CategoryView from "../views/Category";
+import ItemView from "../views/Item";
+import CheckoutView from "../views/Checkout";
 
 export const router = createBrowserRouter([
   {
@@ -12,11 +12,18 @@ export const router = createBrowserRouter([
   },
   {
     path: "/category/:category",
-    element: <Category />,
+    element: <CategoryView />,
   },
-
   {
     path: "/item/:id",
     element: <ItemView />,
+  },
+  {
+    path: "/cart",
+    element: <CartView />,
+  },
+  {
+    path: "/checkout",
+    element: <CheckoutView />,
   },
 ]);

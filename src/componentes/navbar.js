@@ -12,7 +12,7 @@ function NavScrollExample() {
   return (
     <Navbar bg="light" expand="lg">
       <Container fluid>
-        <Navbar.Brand href="#">Emporio</Navbar.Brand>
+        <Navbar.Brand href="/">Emporio</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -20,15 +20,15 @@ function NavScrollExample() {
             style={{ maxHeight: "100px" }}
             navbarScroll
           >
-            <Link className="nav-link" to="/">
+            <Link className="nav-link m-2 display-1" to="/">
               Home
             </Link>
 
-            <Link className="nav-link" to="/category/guatero">
+            <Link className="nav-link m-2" to="/category/guatero">
               Guateros
             </Link>
 
-            <Link className="nav-link" to="/category/alimento">
+            <Link className="nav-link m-2" to="/category/alimento">
               Alimentos
             </Link>
           </Nav>

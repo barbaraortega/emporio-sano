@@ -2,28 +2,36 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ItemList from "./ItemList";
 
-/* mock de productos */
-import { item as items } from "../mocks/items.mock";
+import {
+  collection,
+  getDocs,
+  getFirestore,
+  query,
+  where
+} from "firebase/firestore";
 
 const ItemListContainer = () => {
   const { category } = useParams();
   const [products, setProducts] = useState([]);
 
+  const db = getFirestore();
+  const refProps = [db, "items"];
+  const ref = collection(...refProps);
+
   useEffect(() => {
-    new Promise((resolve) =>
-      setTimeout(() => {
-        resolve(items);
-      }, 1000)
-    ).then((data) => {
-      if (category) {
-        const categories = data.filter(
-          (products) => products.category === category
-        );
-        setProducts(categories);
-      } else {
-        setProducts(data);
-      }
-    });
+    if (category) {
+      const q = query(ref, where("category", "==", category));
+      getDocs(q).then((result) =>
+        setProducts(result.docs.map((doc) => ({ id: doc.id, ...doc.data() })))
+      );
+    } else {
+      // If we need get all items
+      getDocs(ref).then((result) =>
+      setProducts(result.docs.map((doc) => ({ id: doc.id, ...doc.data() })))
+      );
+    }
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [category]);
 
   if (products.length === 0) {
