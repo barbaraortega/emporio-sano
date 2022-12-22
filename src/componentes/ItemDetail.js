@@ -50,7 +50,7 @@ const ItemDetail = ({ item }) => {
                     <strong>Description:</strong> {item.description}
                   </li>
                   <li>
-                    <strong>Price:</strong> {item.price}
+                    <strong>Price:</strong> ${item.price.toLocaleString('es-CL')}
                   </li>
                   {currentStock > 0 && (
                     <li>

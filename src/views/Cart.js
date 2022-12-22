@@ -31,8 +31,9 @@ const CartView = () => {
                 const quantityAdded = product.quantityAdded;
 
                 return (
-                  <div>
+                  <div key={product.item.id}>
                     <Item
+                      key={product.item.id}
                       product={product.item}
                       quantityAdded={quantityAdded}
                     />
@@ -47,7 +48,7 @@ const CartView = () => {
             <div>
               <div>
                 <span>
-                  Total a pagar: <strong>${totalAmount}</strong>
+                  Total a pagar: <strong>${totalAmount.toLocaleString('es-CL')}</strong>
                 </span>
                 <button className="btn btn-success m-3" onClick={handleCheckOut}>Ir al Checkout</button>
               </div>

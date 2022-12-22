@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const Item = ({ product, cantidad }) => {
+const Item = ({ product, quantityAdded: cantidad }) => {
   
   return (
    
@@ -11,7 +11,7 @@ const Item = ({ product, cantidad }) => {
           <Link style={{ color: "green" }} to={`/item/${product.id}`}>{product.name} </Link>
         </h5>
         <p className="card-text">{product.description}</p>
-        <p className="card-text">{product.price}</p>
+        <p className="card-text">${product.price.toLocaleString('es-CL')}</p>
         <p className="card-text">
           {product.stock === 0
             ? "Sin Stock"
